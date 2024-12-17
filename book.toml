@@ -1,0 +1,36 @@
+[book]
+title = "mdBook Doctests with External Crates"
+description = "Use external crates in your mdBook code snippets and be able to test them."
+authors = ["Bob Hyman"]
+language = "en"
+src = "src"
+
+[rust]
+# key thing in config is to point mdbook to a Cargo.toml
+# whose [dependencies] include all the crates you want
+# to use in doctests.
+# In this case, the Cargo.toml is in the mdBook project root,
+# which is wherever the book.toml is.
+manifest = "./Cargo.toml"
+
+[output.html]
+smart-punctuation = true
+site-url = "/sample-mdBook/"
+##git-repository-url = "https://github.com/rust-lang/mdBook/tree/master/guide"
+##edit-url-template = "https://github.com/rust-lang/mdBook/edit/master/guide/{path}"
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.code.hidelines]
+python = "~"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2

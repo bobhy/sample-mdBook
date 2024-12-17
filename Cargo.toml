@@ -1,0 +1,11 @@
+[package]
+name = "sample-mdbook"
+description = "Simple book to demonstrate mdbook extern crate support."
+version = "0.1.0"
+# Important to specify edition in cargo -- mdbook picks it up as a default for doctests
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.216", features = ["derive"] }
+anyhow = "1.0.94"
+serde_json = "1.0.133"
